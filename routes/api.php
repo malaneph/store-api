@@ -11,12 +11,14 @@ Route::get('/user', function (Request $request) {
 
 Route::controller(CategoryController::class)
     ->prefix('/categories')
+    ->name('categories.')
     ->group(function () {
-        Route::get('/', 'index');
+        Route::get('/', 'index')->name('index');
     });
 
 Route::controller(ProductController::class)
     ->prefix('/products')
+    ->name('products.')
     ->group(function () {
-        Route::get('/', 'index');
+        Route::get('/', 'index')->name('index');
     });
