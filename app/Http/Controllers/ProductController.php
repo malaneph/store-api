@@ -23,7 +23,7 @@ class ProductController extends Controller
                 return match (request('sort')) {
                     'price_asc' => $query->orderBy('price'),
                     'price_desc' => $query->orderByDesc('price'),
-                    'rating_desc' => $query->orderBy('rating'),
+                    'rating_desc' => $query->orderByDesc('rating'),
                     'newest' => $query->latest(),
                 };
             })
