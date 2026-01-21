@@ -10,10 +10,10 @@ class ProductRequest extends FormRequest
     {
         return [
             'name' => 'string',
-            'price_from' => 'numeric',
-            'price_to' => 'numeric',
+            'min_price' => 'numeric',
+            'max_price' => 'numeric',
             'category_id' => 'integer|exists:categories,id',
-            'rating_from' => 'numeric|between:0,5',
+            'min_rating' => 'numeric|between:0,5',
             'in_stock' => 'boolean',
             'per_page' => 'integer',
             'sort' => 'string'

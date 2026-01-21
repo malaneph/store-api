@@ -10,6 +10,8 @@ class Product extends Model
 {
     use HasFactory;
 
+    public const int MAX_RATING = 5;
+
     protected $fillable = [
         'name',
         'price',

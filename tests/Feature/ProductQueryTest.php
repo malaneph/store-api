@@ -98,7 +98,7 @@ test('test filter by name', function () {
 });
 
 test('test filter by price', function () {
-    $query_params = ['price_from' => 100, 'price_to' => 200];
+    $query_params = ['min_price' => 100, 'max_price' => 200];
     $response = $this->getJson(route('products.index', $query_params));
 
     $response->assertStatus(200);
@@ -114,7 +114,7 @@ test('test filter by stock availability', function () {
 });
 
 test('test filter by rating', function () {
-    $query_params = ['rating_from' => 4.5];
+    $query_params = ['min_rating' => 4.5];
     $response = $this->getJson(route('products.index', $query_params));
 
     $response->assertStatus(200);
@@ -124,10 +124,10 @@ test('test filter by rating', function () {
 test('test filter by all', function () {
     $query_params = [
         'name' => '1',
-        'price_from' => 100,
-        'price_to' => 200,
+        'min_price' => 100,
+        'max_price' => 200,
         'in_stock' => true,
-        'rating_from' => 4.0
+        'min_rating' => 4.0
     ];
     $response = $this->getJson(route('products.index', $query_params));
 
