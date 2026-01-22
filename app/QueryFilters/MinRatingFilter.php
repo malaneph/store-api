@@ -7,10 +7,8 @@ use Illuminate\Database\Eloquent\Builder;
 
 class MinRatingFilter extends BaseFilter
 {
-    protected string $column;
-
-    public function __construct(string $column = 'min_rating') {
-        $this->column = $column;
+    public function __construct(protected string $column = 'min_rating')
+    {
     }
 
     protected function applyFilter(Builder $builder): Builder

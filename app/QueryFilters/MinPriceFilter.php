@@ -6,10 +6,8 @@ use Illuminate\Database\Eloquent\Builder;
 
 class MinPriceFilter extends BaseFilter
 {
-    protected string $column;
-
-    public function __construct(string $column = 'min_price') {
-        $this->column = $column;
+    public function __construct(protected string $column = 'min_price')
+    {
     }
 
     protected function applyFilter(Builder $builder): Builder

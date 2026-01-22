@@ -6,10 +6,8 @@ use Illuminate\Database\Eloquent\Builder;
 
 class MaxPriceFilter extends BaseFilter
 {
-    protected string $column;
-
-    public function __construct(string $column = 'max_price') {
-        $this->column = $column;
+    public function __construct(protected string $column = 'max_price')
+    {
     }
 
     protected function applyFilter(Builder $builder): Builder
