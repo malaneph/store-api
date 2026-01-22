@@ -14,10 +14,6 @@ use Illuminate\Support\Facades\Pipeline;
 
 class ProductService
 {
-    public function __construct()
-    {
-    }
-
     public static function getProducts(): LengthAwarePaginator
     {
         $query = Product::query();
